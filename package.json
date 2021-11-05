@@ -1,0 +1,57 @@
+{
+  "name": "beach-bum-app",
+  "version": "1.0.0",
+  "description": "Team Goblin Shark Scratch Project",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "dev": "NODE_ENV=development nodemon server.js & NODE_ENV=development webpack serve",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Team-Goblin-Shark-29/Beach-Bum-App.git"
+  },
+  "author": "Josh Jordan, Taras Sukhoverskyi, Alex Hager, Dana Flury",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Team-Goblin-Shark-29/Beach-Bum-App/issues"
+  },
+  "homepage": "https://github.com/Team-Goblin-Shark-29/Beach-Bum-App#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^6.0.12",
+    "node-fetch": "^3.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-hot-loader": "^4.13.0",
+    "react-router": "^6.0.0",
+    "react-router-dom": "^6.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/plugin-syntax-jsx": "^7.16.0",
+    "@babel/preset-env": "^7.16.0",
+    "@babel/preset-react": "^7.16.0",
+    "babel-loader": "^8.2.3",
+    "concurrently": "^6.3.0",
+    "cross-env": "^7.0.3",
+    "css-loader": "^6.5.1",
+    "eslint": "^7.32.0",
+    "eslint-plugin-react": "^7.26.1",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.5.0",
+    "nodemon": "^2.0.14",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.62.1",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.4.0",
+    "webpack-hot-middleware": "^2.25.1"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "server/data/*",
+      "client/*"
+    ]
+  }
+}

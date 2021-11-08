@@ -36,7 +36,7 @@ userController.createUser = async(req, res, next) => {
       email: email,
     });
     res.locals = newUser;
-    return next()
+    return next();
   }
   catch(error){
     res.status(400).send('can\'t create user');

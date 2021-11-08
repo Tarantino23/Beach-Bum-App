@@ -1,5 +1,5 @@
 const User = require('../models/userModel');
-
+const Beach = require('../models/nybeachesModel');
 
 const userController = {};
 

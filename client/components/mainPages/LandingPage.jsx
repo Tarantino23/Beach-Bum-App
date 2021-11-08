@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import Header from './Header';
-import ImageContainer from './ImageContainer';
-import Sidebar from './Sidebar';
-import Login from './Login';
+import Header from '../pieces/Header';
+import ImageContainer from '../containers/ImageContainer';
+import Sidebar from '../pieces/Sidebar';
+import { LoginContainer } from '../containers/LoginContainer';
 import { Link } from 'react-router-dom';
 
 // Create Beach Bums Header Component
@@ -12,19 +12,16 @@ import { Link } from 'react-router-dom';
 // Create Sidebar w/ Description
 
 export class LandingPage extends Component {
-    constructor (props) {
-      super(props);
-    }
   
     render() {
       return (
         <>
         <main>
           <Header />
-          <Login />
+          <LoginContainer />
           <ImageContainer />
           <Sidebar />
-          <Link to="/UserCreate">Create Account</Link>
+          <Link to="/createUser">Create Account</Link>
         </main>
         </>
       )

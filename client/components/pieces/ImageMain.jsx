@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-export class UserCreateImage extends Component {
+export class ImageMain extends Component {
 
   render() {
     return (
@@ -11,4 +11,4 @@ export class UserCreateImage extends Component {
   }
 }
 
-export default UserCreateImage
+export default ImageMain

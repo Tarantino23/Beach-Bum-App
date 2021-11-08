@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import UserCreateImage from './UserCreateImage'
-import UserDataForm from './UserDataForm'
+import ImageMain from '../pieces/ImageMain'
+import UserConfirmDataList from '../pieces/UserConfirmDataList'
 
-export class UserDataContainer extends Component {
+class UserConfirmDataContainer extends Component {
   constructor(props){
     super(props);
   }
@@ -10,14 +10,14 @@ export class UserDataContainer extends Component {
   createAccount = e => {
     e.preventDefault();
     //destructure field values from props
-    const { username, password, firstName, lastName, email } = this.props;
+    const { values : { username, password, firstName, lastName, email }} = this.props;
     //store values in const to send
     const data = { username, password, firstName, lastName, email };
     //assign http request options
     const requestOptions = {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
-      body: JOSN.stringify(data)
+      body: JSON.stringify(data)
     };
     //send fetch request to api
     fetch('/api/signup', requestOptions)
@@ -26,15 +26,20 @@ export class UserDataContainer extends Component {
   }
   
   render() {
-    
+    const { values, prevStep } = this.props;
     return (
      <>
-      <UserDataForm 
-      createAccount={ this.createAccount }/>
-      <UserCreateImage />
+      <h3>Please confirm your information is correct</h3>
+      <UserConfirmDataList 
+      values={values}
+      />
+      <button onClick={ this.createAccount } >Create Account</button>
+      <button onClick={ prevStep } >Edit Information</button>
+      <ImageMain/>
      </>
+
     )
   }
 }
 
-export default UserDataContainer
+export default UserConfirmDataContainer

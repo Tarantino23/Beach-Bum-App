@@ -19,9 +19,9 @@ export class LandingPage extends Component {
         <main>
           <Header />
           <LoginContainer />
+          <Link to="/createUser">Create Account</Link>
           <ImageContainer />
           <Sidebar />
-          <Link to="/createUser">Create Account</Link>
         </main>
         </>
       )

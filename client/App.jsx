@@ -4,6 +4,8 @@ import LandingPage from './components/mainPages/LandingPage';
 import CreateUserPage from './components/mainPages/CreateUserPage';
 import WelcomePage from './components/mainPages/WelcomePage';
 
+import './stylesheets/styles.css'
+
 export class App extends Component {
   render() {
     return (

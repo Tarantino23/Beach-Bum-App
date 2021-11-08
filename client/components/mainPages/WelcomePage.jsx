@@ -3,6 +3,7 @@ import Header from '../pieces/Header';
 import UserProfileContainer from '../containers/UserProfileContainer';
 import SearchFieldContainer from '../containers/SearchFieldContainer';
 import FavoriteBeachesContainer from '../containers/FavoriteBeachesContainer';
+import DisplayResultsContainer from '../containers/DisplayResultsContainer';
 
 class WelcomePage extends Component {
   constructor(props){
@@ -35,9 +36,11 @@ class WelcomePage extends Component {
       step: step - 1
     })
   }
+
   handleCheckboxChange = input => e => {
     this.setState({ [input] : e.target.checked })
   }
+
   render(){
     const { Surf, Accessible, Barbecue_Allowed, Bathroom,Bicycle_and_Skate_Path, Boardwalk, Concession_Stand, Performance_Pavilion } = this.state;
     const beachOptions = { Surf, Accessible, Barbecue_Allowed, Bathroom,Bicycle_and_Skate_Path, Boardwalk, Concession_Stand, Performance_Pavilion }
@@ -48,20 +51,26 @@ class WelcomePage extends Component {
       case 3:
         return (
           <>
+            <div className="welcome-search-page">
             <Header />
-            <UserProfileContainer />
-            <SearchFieldContainer handleCheckboxChange={ this.handleCheckboxChange } search={ this.search }
-            beachOptions={ beachOptions }/>
-            <FavoriteBeachesContainer />
+              <UserProfileContainer />
+              <SearchFieldContainer 
+              handleCheckboxChange={ this.handleCheckboxChange } 
+              search={ this.search }
+              beachOptions={ beachOptions }/>
+              <FavoriteBeachesContainer />
+            </div>
           </>
         )
       case 4:
         return (
           <>
+            <div className="welcome-display-page">
             <Header />
             <UserProfileContainer />
             <DisplayResultsContainer prevStep={ this.prevStep }/>
             <FavoriteBeachesContainer />
+            </div>
           </>
         )
 
@@ -69,3 +78,6 @@ class WelcomePage extends Component {
   }
 }
 export default WelcomePage
+/*
+
+ */

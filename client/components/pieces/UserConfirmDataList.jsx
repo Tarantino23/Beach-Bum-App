@@ -10,11 +10,11 @@ export class UserConfirmDataList extends Component {
     return (
       <>
         <ul className="user-data-list">
-          <li>{username}</li>
-          <li>{password}</li>
-          <li>{firstName}</li>
-          <li>{lastName}</li>
-          <li>{email}</li>
+          <li>{ username }</li>
+          <li>{ password }</li>
+          <li>{ firstName }</li>
+          <li>{ lastName }</li>
+          <li>{ email }</li>
         </ul>
       </>
     )

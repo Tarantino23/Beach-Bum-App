@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Header from '../pieces/Header';
-import ImageMain from '../pieces/ImageMain';
 import UserDataContainer from '../containers/UserDataContainer';
 import UserConfirmDataContainer from '../containers/UserConfirmDataContainer'
 

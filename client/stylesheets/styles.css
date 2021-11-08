@@ -1,0 +1,39 @@
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  /* position: relative; */
+}
+html {
+  box-sizing: border-box;
+}
+/* Landing Page Styling */
+/* Welcome Page Styling */
+/* Create User Page Styling */
+.header {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgb(186, 195, 213);
+  color: rgb(70, 65, 65);
+  font-size: 36px;
+  text-align: center;
+}
+.welcome-search-page {
+  display: flex;
+  flex-direction: column;
+}
+.checkbox-form{
+  display: inline-block;
+  
+}
+.favorite-beaches-container{
+display: flex;
+
+
+}
+.welcome-display-page {
+  display: flex;
+  flex-direction: column;
+}

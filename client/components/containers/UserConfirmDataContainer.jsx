@@ -33,7 +33,7 @@ class UserConfirmDataContainer extends Component {
       <UserConfirmDataList 
       values={values}
       />
-      <button onClick={ this.createAccount } >Create Account</button>
+      <button onClick={ createAccount } >Create Account</button>
       <button onClick={ prevStep } >Edit Information</button>
       <ImageMain/>
      </>

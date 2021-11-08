@@ -1,7 +1,7 @@
 const User = require('../models/userModel');
 
 
-const userController = {}
+const userController = {};
 
 userController.verifyUser = async (req, res, next) => {
     const { username, password } = req.body;
@@ -15,9 +15,9 @@ userController.verifyUser = async (req, res, next) => {
                 res.locals.user = user;
                 return next()
             } else {
-                res.redirect('/signup')
+              return res.status(204).send('Incorrect Username or Password');
             }
-        } catch (error) {
+        } catch(error) {
             return next('Error in userController.verifyUser: ' +JSON.stringify(Error));
         }
     } catch(error) {
@@ -27,11 +27,12 @@ userController.verifyUser = async (req, res, next) => {
 
 userController.createUser = async(req, res, next) => {
   try {
-    const {userName, password, name, email} = req.body;
+    const {userName, password, firstName, lastName, email} = req.body;
     const newUser = await User.create({
       userName: userName,
       password: password,
-      name: name,
+      firstName: firstName,
+      lastName: lastName,
       email: email,
     });
     res.locals = newUser;
@@ -41,3 +42,5 @@ userController.createUser = async(req, res, next) => {
     res.status(400).send('can\'t create user');
   }
 }
+
+module.exports = userController;

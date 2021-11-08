@@ -10,7 +10,7 @@ userRouter.post('/', userController.verifyUser, (req, res) => {
   })
   
 userRouter.get('/', (req, res) => {
-    return res.status(200).redirect('/create-account')
+    return res.status(200).redirect('/create-account');
 })
 
   module.export = userRouter;

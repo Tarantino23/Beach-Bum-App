@@ -2,7 +2,7 @@
   "name": "beach-bum-app",
   "version": "1.0.0",
   "description": "Team Goblin Shark Scratch Project",
-  "main": "index.js",
+  "main": "client/index.js",
   "scripts": {
     "start": "node server/server.js",
     "dev": "NODE_ENV=development nodemon server.js & NODE_ENV=development webpack serve",

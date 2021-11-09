@@ -1,5 +1,5 @@
 const User = require('../models/userModel');
-const Beach = require('../models/nybeachesModel');
+const Nybeach = require('../models/nybeachesModel');
 
 const userController = {};
 
@@ -42,5 +42,46 @@ userController.createUser = async(req, res, next) => {
     res.status(400).send('can\'t create user');
   }
 }
+
+userController.searchBeaches = async (req, res, next) => {
+  
+    const beachOptions = req.body;
+    // console.log('this is req.body: ', req.body)
+    console.log('beachOptions: ', beachOptions)
+    try {
+      const options = {};
+      beachOptions.map(el => options[el] = { $nin: [null, 'N']});
+      console.log('this is options: ', options);
+      const beaches = await Nybeach.find(options);
+      console.log('this is beaches: ', beaches)
+      res.locals = beaches;
+      return next();
+      
+    } catch (error) {
+      return next('Error in userController.searchBeaches: ' +JSON.stringify(Error));
+  }
+};
+
+
+// const { beachOptions } = req.body;
+  // try {
+  //   const beaches = await NYbeaches.find({beachOptions});
+  //   for (let i = 0; i < beachOptions.length; i++) {
+  //     if (NYbeaches.beachOptions[i] !== null && NYbeaches.beachOptions[i] !== 'N')
+  //   };
+  // }
+
+  // const { beachOptions } = req.body;
+  // try {
+  //   const beaches = new Set();
+  //   for (let i = 0; i < beachOptions.length; i++) {
+  //     const foundBeaches = NYbeaches.find(beachOptions[i]);
+  //     foundBeaches.forEach( el => beaches[el] = el);
+  //   }
+  //   res.locals = set.toArray(beaches);
+  //   return next();
+  // } catch {
+
+  // }
 
 module.exports = userController;

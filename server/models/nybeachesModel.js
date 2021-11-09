@@ -23,5 +23,7 @@ const Nybeach = new Schema({
     Description:{type: String}
 });
 
-const Nybeach = mongoose.model('Nybeach', Nybeach);
-module.exports = Nybeach;
+// const NYbeach = mongoose.model('NYbeach', Nybeach);
+// module.exports = NYbeach;
+
+module.exports = mongoose.model('Nybeach', Nybeach);

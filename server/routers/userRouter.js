@@ -13,5 +13,8 @@ userRouter.post('/createUser', userController.createUser, (req, res) => {
   return res.status(200).json(res.locals);
 })
 
+userRouter.post('/search', userController.searchBeaches, (req, res) => {
+  return res.status(200).json(res.locals);
+})
 
 module.exports = userRouter;

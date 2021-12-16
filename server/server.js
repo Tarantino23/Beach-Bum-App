@@ -16,6 +16,12 @@ mongoose.connection.once('open', function() {
   console.log("MongoDB database connection established successfully");
 });
 
+<<<<<<< HEAD
+
+//Landing page router and get/post requests
+app.use('/', userRouter);
+
+=======
 //Render the landing page
 // app.get('/', (req, res) => {
 //   res.status(200).sendFile(path.join(__dirname, '../client/index.html'));
@@ -23,5 +29,6 @@ mongoose.connection.once('open', function() {
 //Landing page router and get/post requests
 
 app.use('/', userRouter);
+>>>>>>> 0a598946862e25bdbd6bded5ab2859e56b6e0023
 
 app.listen(PORT, () => console.log(`Listening on PORT: ${PORT}`));
